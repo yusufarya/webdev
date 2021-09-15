@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starback Demo</title>
+    <link rel="stylesheet" href="css/starback.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="hero">
+        <canvas id="canvas"></canvas>
+        
+        <div class="content">
+            <h1>Make a Beautiful <span class="text-highlight">Website</span> with our services</h1>
+            <div class="buttons">
+                <a href="web_portfolio.html" class='btn btn-light'>Go to Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/starback@1.0.1/dist/starback.js"></script>
+    <script>
+        const canvas = document.getElementById('canvas')
+        const starback = new Starback(canvas,{
+            width: canvas.parentElement.clientWidth,
+            height: canvas.parentElement.clientHeight,
+            speed: 5,
+            frequency: 5,
+            slope: {x: 10, y: 3},
+            directionX: 10,
+            spread: .2,
+            randomOpacity: true,
+            backgroundColor: ["#c2eef8", "#9cd0db", "#658c94"]
+        })
+
+        starback.generateStar(20)
+        // let mountain = new Image()
+        // mountain.src = "images/mountain2.png"
+
+        mountain.onload = () => {
+            starback.addToFront(ctx => {
+                ctx.drawImage(
+                    mountain,
+                    0,
+                    0,
+                    mountain.width,
+                    mountain.height,
+                    0,
+                    canvas.height - mountain.height,
+                    canvas.width,
+                    mountain.height
+                    )
+            })
+        }
+    </script>
+</body>
+</html>
