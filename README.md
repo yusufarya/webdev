@@ -37,7 +37,7 @@
     Our Services Click Here
   </a>
 </p>
-Click me : https://yusufarya.github.io/webdev/
+
 ## Table of Contents
 - [Quickstart](#quickstart)
 - [Documentation](#documentation)
